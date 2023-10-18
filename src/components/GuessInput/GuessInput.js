@@ -21,6 +21,7 @@ function GuessInput() {
 				required
 				maxLength={5}
 				pattern='[A-Z]{5,5}'
+				title='5 letter word'
 				autoComplete='off'
 				value={guess}
 				onChange={(event) => {
