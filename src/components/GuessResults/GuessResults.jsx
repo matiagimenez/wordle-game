@@ -1,14 +1,12 @@
 import React from 'react';
+import { range } from '../../utils';
+import { Guess } from '../Guess';
 
-export const GuessResults = ({ guesses }) => {
+export const GuessResults = ({ guesses, numOfGuesses }) => {
 	return (
 		<section className='guess-results'>
-			{guesses.map(({ value, id }) => {
-				return (
-					<p className='guess' key={id}>
-						{value}
-					</p>
-				);
+			{range(numOfGuesses).map((row) => {
+				return <Guess guessData={guesses[row]} key={row} />;
 			})}
 		</section>
 	);
