@@ -15,12 +15,7 @@ function Game() {
 
 	const handleSubmitGuess = (guess) => {
 		if (guesses.length === NUM_OF_GUESSES_ALLOWED) return;
-		const newGuess = {
-			value: guess,
-			id: `${guess}-${Math.random()}`,
-		};
-		console.log(newGuess.id);
-		setGuesses([...guesses, newGuess]);
+		setGuesses([...guesses, guess]);
 	};
 
 	return (
