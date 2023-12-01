@@ -1,2 +1,3 @@
-export * from './GuessInput';
-export { default } from './GuessInput';
+import { GuessInput } from './GuessInput';
+
+export { GuessInput };

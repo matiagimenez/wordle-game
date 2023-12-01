@@ -1,2 +1,3 @@
-export * from "./Game";
-export { default } from "./Game";
+import { Game } from './Game';
+
+export { Game };

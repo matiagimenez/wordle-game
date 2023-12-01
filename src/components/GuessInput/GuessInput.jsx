@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-function GuessInput() {
+export function GuessInput({ handleSubmitGuess, guesses }) {
 	const [guess, setGuess] = useState('');
 
 	function handleSubmit(event) {
 		event.preventDefault();
 		if (guess.length !== 5) return;
-
+		handleSubmitGuess(guess);
 		console.log({ guess });
 		setGuess('');
 	}
@@ -32,5 +32,3 @@ function GuessInput() {
 		</form>
 	);
 }
-
-export default GuessInput;
