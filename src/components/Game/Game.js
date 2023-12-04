@@ -16,12 +16,12 @@ function Game() {
 	const [status, setStatus] = useState('running');
 
 	const handleSubmitGuess = (guess) => {
-		setGuesses([...guesses, guess]);
-		console.log(guesses.length);
-		console.log(NUM_OF_GUESSES_ALLOWED);
+		// Uso esta variable para poder utilizar el estado futuro, ya que "guesses" se actualizará de forma asincrona
+		const nextGuesses = [...guesses, guess];
+		setGuesses(nextGuesses);
 		if (guess === answer) {
 			setStatus('won');
-		} else if (guesses.length === NUM_OF_GUESSES_ALLOWED - 1) {
+		} else if (nextGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
 			setStatus('lost');
 		}
 	};
