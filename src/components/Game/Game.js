@@ -11,7 +11,6 @@ import { Button } from '../Button';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
-console.info({ answer });
 
 function Game() {
 	const [guesses, setGuesses] = useState([]);
