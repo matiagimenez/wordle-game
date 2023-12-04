@@ -10,7 +10,7 @@ import { LostBanner } from '../LostBanner/';
 import { Button } from '../Button';
 
 // Pick a random word on every pageload.
-const answer = sample(WORDS);
+let answer = sample(WORDS);
 
 function Game() {
 	const [guesses, setGuesses] = useState([]);
@@ -30,6 +30,7 @@ function Game() {
 	const handleGameRestart = () => {
 		setStatus('running');
 		setGuesses([]);
+		answer = sample(WORDS);
 	};
 
 	return (
