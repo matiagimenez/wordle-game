@@ -1,3 +1,3 @@
-import { Header } from './Header.jsX';
+import { Header } from './Header.js';
 
 export { Header };
