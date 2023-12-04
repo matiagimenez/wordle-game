@@ -3,23 +3,8 @@ import { range } from '../../utils';
 import { checkGuess } from '../../game-helpers';
 import { Cell } from '../Cell';
 
-export const Guess = ({ guess, answer, handleGameStatus, isLastGuess }) => {
+export const Guess = ({ guess, answer }) => {
 	const result = checkGuess(guess, answer);
-	let isCorrect = true;
-
-	if (result) {
-		result.forEach(({ status }) => {
-			if (status !== 'correct') {
-				isCorrect = false;
-			}
-		});
-
-		if (isCorrect) {
-			handleGameStatus('won');
-		} else if (isLastGuess) {
-			handleGameStatus('lost');
-		}
-	}
 
 	return (
 		<p className='guess'>

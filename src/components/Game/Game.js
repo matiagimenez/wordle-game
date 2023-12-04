@@ -16,8 +16,14 @@ function Game() {
 	const [status, setStatus] = useState('running');
 
 	const handleSubmitGuess = (guess) => {
-		if (guesses.length === NUM_OF_GUESSES_ALLOWED) return;
 		setGuesses([...guesses, guess]);
+		console.log(guesses.length);
+		console.log(NUM_OF_GUESSES_ALLOWED);
+		if (guess === answer) {
+			setStatus('won');
+		} else if (guesses.length === NUM_OF_GUESSES_ALLOWED - 1) {
+			setStatus('lost');
+		}
 	};
 
 	return (
@@ -29,7 +35,6 @@ function Game() {
 				guesses={guesses}
 				numOfGuesses={NUM_OF_GUESSES_ALLOWED}
 				answer={answer}
-				handleGameStatus={setStatus}
 			/>
 			<GuessInput
 				handleSubmitGuess={handleSubmitGuess}
