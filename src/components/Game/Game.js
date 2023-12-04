@@ -42,17 +42,17 @@ function Game() {
 				numOfGuesses={NUM_OF_GUESSES_ALLOWED}
 				answer={answer}
 			/>
-			<section className='game-controls'>
-				<GuessInput
-					handleSubmitGuess={handleSubmitGuess}
-					gameStatus={status}
-				/>
+			{status !== 'running' && (
 				<Button handleClick={handleGameRestart}>
 					<span className='material-symbols-outlined'>
 						restart_alt
 					</span>
 				</Button>
-			</section>
+			)}
+			<GuessInput
+				handleSubmitGuess={handleSubmitGuess}
+				gameStatus={status}
+			/>
 		</>
 	);
 }
