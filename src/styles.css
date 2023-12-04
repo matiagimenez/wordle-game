@@ -212,6 +212,20 @@ h1 {
 	margin-bottom: 0.5em;
 }
 
+.game-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	position: relative;
+	top: 20px;
+	margin-left: 15px;
+	cursor: pointer;
+	color: var(--color-gray-300);
+}
+
 @keyframes slideUp {
 	from {
 		transform: translateY(100%);

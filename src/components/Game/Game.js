@@ -5,8 +5,9 @@ import { WORDS } from '../../data';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 import { GuessInput } from '../GuessInput';
 import { GuessResults } from '../GuessResults';
-import { WonBanner } from '../WonBanner/WonBanner';
-import { LostBanner } from '../LostBanner/LostBanner';
+import { WonBanner } from '../WonBanner/';
+import { LostBanner } from '../LostBanner/';
+import { Button } from '../Button';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -27,6 +28,11 @@ function Game() {
 		}
 	};
 
+	const handleGameRestart = () => {
+		setStatus('running');
+		setGuesses([]);
+	};
+
 	return (
 		<>
 			{status === 'won' && <WonBanner totalGuesses={guesses.length} />}
@@ -36,10 +42,17 @@ function Game() {
 				numOfGuesses={NUM_OF_GUESSES_ALLOWED}
 				answer={answer}
 			/>
-			<GuessInput
-				handleSubmitGuess={handleSubmitGuess}
-				gameStatus={status}
-			/>
+			<section className='game-controls'>
+				<GuessInput
+					handleSubmitGuess={handleSubmitGuess}
+					gameStatus={status}
+				/>
+				<Button handleClick={handleGameRestart}>
+					<span className='material-symbols-outlined'>
+						restart_alt
+					</span>
+				</Button>
+			</section>
 		</>
 	);
 }
