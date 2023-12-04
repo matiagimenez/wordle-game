@@ -38,7 +38,7 @@ function Game() {
 			/>
 			<GuessInput
 				handleSubmitGuess={handleSubmitGuess}
-				guesses={guesses}
+				gameStatus={status}
 			/>
 		</>
 	);
