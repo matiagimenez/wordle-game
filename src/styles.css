@@ -219,9 +219,8 @@ h1 {
 }
 
 .button {
-	position: relative;
-	top: 20px;
-	margin-left: 15px;
+	position: absolute;
+	top: 535px;
 	cursor: pointer;
 	color: var(--color-gray-300);
 }
