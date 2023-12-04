@@ -1,5 +1,6 @@
 import React from 'react';
 
 export const Cell = ({ letter = '', status = '' }) => {
-	return <span className={`cell ${status}`}>{letter}</span>;
+	const className = status ? `cell ${status}` : 'cell';
+	return <span className={className}>{letter}</span>;
 };

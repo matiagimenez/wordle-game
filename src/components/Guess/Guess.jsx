@@ -10,8 +10,8 @@ export const Guess = ({ guess, answer }) => {
 			{range(5).map((column) => {
 				return (
 					<Cell
-						letter={result ? result[column].letter : null}
-						status={result ? result[column].status : null}
+						letter={result ? result[column].letter : undefined}
+						status={result ? result[column].status : undefined}
 						key={column}
 					/>
 				);
